@@ -11,7 +11,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        Base {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -26,27 +26,39 @@
             >;
         };
 
-        layer_3 {
+        Symbols_Nums_Arrows {
             bindings = <
-&none  &none  &none  &none  &none  &none        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none           &none           &kp BACKSPACE
-&none  &none  &none  &none  &none  &none        &kp NUMBER_4  &kp N5        &kp N6        &none           &kp UP_ARROW    &none
-&none  &none  &none  &none  &none  &none        &kp N7        &kp N8        &kp N9        &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                     &none  &to 0  &kp SPACE    &kp RETURN    &to 2         &kp N0
+&kp TAB         &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp EQUAL    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &none           &none           &kp BACKSPACE
+&kp LCTRL       &none  &kp LEFT_BRACE        &kp RIGHT_BRACE        &sl 3      &sl 4        &kp NUMBER_4  &kp N5        &kp N6         &kp N0          &kp UP_ARROW    &kp SQT
+&kp LEFT_SHIFT  &none  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none      &none        &kp N7        &kp N8        &kp N9         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                             &kp LEFT_COMMAND       &to 0      &kp SPACE    &kp RETURN    &to 2         &kp RIGHT_ALT
             >;
         };
 
-        raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
+        System {
             bindings = <
-&kp TAB    &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp BSPC
-&kp LCTRL  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                             &kp LGUI  &to 0     &kp SPACE    &kp RET    &trans     &kp RALT
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                     &none  &to 0  &none    &none  &none  &none
+            >;
+        };
+
+        TMUX {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
+        };
+
+        Rectangle_WindowManager {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans            &trans            &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans            &kp LC(LA(UP))    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &kp LC(LA(LEFT))  &kp LC(LA(DOWN))  &kp LC(LA(RIGHT))
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
     };
