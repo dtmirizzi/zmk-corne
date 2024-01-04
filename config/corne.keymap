@@ -28,10 +28,10 @@
 
         Symbols_Nums_Arrows {
             bindings = <
-&kp TAB         &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS  &kp EQUAL    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &none           &none           &kp BACKSPACE
-&kp LCTRL       &none  &kp LEFT_BRACE        &kp RIGHT_BRACE        &sl 3      &sl 4        &kp NUMBER_4  &kp N5        &kp N6         &kp N0          &kp UP_ARROW    &kp SQT
-&kp LEFT_SHIFT  &none  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none      &none        &kp N7        &kp N8        &kp N9         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
-                                             &kp LEFT_COMMAND       &to 0      &kp SPACE    &kp RETURN    &to 2         &kp RIGHT_ALT
+&kp TAB         &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &mo 4        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp MINUS       &kp PLUS        &kp BACKSPACE
+&kp LCTRL       &none  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &sl 5        &kp NUMBER_4  &kp N5        &kp N6         &kp N0          &kp UP_ARROW    &kp SQT
+&kp LEFT_SHIFT  &none  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none  &mo 3        &kp N7        &kp N8        &kp N9         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+                                             &kp LEFT_COMMAND       &to 0  &kp SPACE    &kp RETURN    &to 2         &kp RIGHT_ALT
             >;
         };
 
@@ -46,19 +46,28 @@
 
         TMUX {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                     &none  &none  &none    &none  &none  &none
             >;
         };
 
         Rectangle_WindowManager {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans            &trans            &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans            &kp LC(LA(UP))    &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &kp LC(LA(LEFT))  &kp LC(LA(DOWN))  &kp LC(LA(RIGHT))
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none             &none             &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none             &kp LC(LA(UP))    &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &kp LC(LA(LEFT))  &kp LC(LA(DOWN))  &kp LC(LA(RIGHT))
+                     &none  &none  &none    &none  &none  &none
+            >;
+        };
+
+        Apps {
+            bindings = <
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                     &none  &none  &none    &none  &none  &none
             >;
         };
     };
