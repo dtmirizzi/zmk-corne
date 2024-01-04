@@ -22,6 +22,69 @@
             bindings = <&kp BACKSPACE &kp LG(SPACE) &kp LS(V) &kp I &kp S &kp U &kp A &kp L &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp SPACE &kp LS(C) &kp O &kp D &kp E &kp RETURN>;
             label = "VS_CODE";
         };
+
+        tmux_horizontal: tmux_horizontal {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp PRCNT>;
+            label = "TMUX_HORIZONTAL";
+        };
+
+        tmux_vert: tmux_vert {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp DQT>;
+            label = "TMUX_VERT";
+        };
+
+        tmux_create: tmux_create {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp C>;
+            label = "TMUX_CREATE";
+        };
+
+        tmux_pane_x: tmux_pane_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp X &kp Y>;
+            label = "TMUX_PANE_X";
+        };
+
+        tmux_next: tmux_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp N>;
+            label = "TMUX_NEXT";
+        };
+
+        tmux_prev: tmux_prev {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp P>;
+            label = "TMUX_PREV";
+        };
+
+        tmux_window_x: tmux_window_x {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B) &kp AMPS &kp Y>;
+            label = "TMUX_WINDOW_X";
+        };
+
+        chrome: chrome {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE &spotlight &kp C &kp H &kp R &kp O &kp M &kp E &kp RETURN>;
+            label = "CHROME";
+        };
+
+        spotlight: spotlight {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(SPACE)>;
+            label = "SPOTLIGHT";
+        };
     };
 
     keymap {
@@ -46,7 +109,7 @@
             bindings = <
 &kp TAB         &none  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none  &sl 5        &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp MINUS       &kp PLUS        &kp BACKSPACE
 &kp LCTRL       &none  &kp LEFT_BRACE        &kp RIGHT_BRACE        &none  &mo 4        &kp NUMBER_4  &kp N5        &kp N6         &kp N0          &kp UP_ARROW    &kp SQT
-&kp LEFT_SHIFT  &none  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none  &mo 3        &kp N7        &kp N8        &kp N9         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
+&kp LEFT_SHIFT  &none  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &none  &sl 3        &kp N7        &kp N8        &kp N9         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW
                                              &kp LEFT_COMMAND       &to 0  &kp SPACE    &kp RETURN    &mo 2         &kp RIGHT_ALT
             >;
         };
@@ -62,10 +125,10 @@
 
         TMUX {
             bindings = <
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                     &none  &none  &none    &none  &none  &none
+&none  &none  &none         &none         &none  &none    &none       &none             &none  &none  &tmux_prev  &tmux_pane_x
+&none  &none  &none         &none         &none  &none    &none       &tmux_horizontal  &none  &none  &none       &tmux_vert
+&none  &none  &tmux_pane_x  &tmux_create  &none  &none    &tmux_next  &none             &none  &none  &none       &none
+                            &none         &none  &none    &none       &none             &none
             >;
         };
 
@@ -80,10 +143,10 @@
 
         Apps {
             bindings = <
-&none  &none  &none  &none  &none     &terminal    &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &none     &none        &none  &none  &none  &none  &none  &none
-&none  &none  &none  &none  &vs_code  &none        &none  &none  &none  &none  &none  &none
-                     &none  &none     &none        &none  &none  &none
+&none  &none  &none  &none    &none     &terminal     &none  &none  &none  &none  &none  &none
+&none  &none  &none  &none    &none     &none         &none  &none  &none  &none  &none  &none
+&none  &none  &none  &chrome  &vs_code  &none         &none  &none  &none  &none  &none  &none
+                     &none    &none     &spotlight    &none  &none  &none
             >;
         };
     };
