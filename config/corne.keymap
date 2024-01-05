@@ -156,9 +156,9 @@
 
         symbols {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp DOLLAR       &kp PERCENT   &kp CARET  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp AMPERSAND    &kp ASTERISK  &trans     &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp EXCLAMATION  &kp AT_SIGN   &kp HASH   &kp MINUS  &kp EQUAL  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp DOLLAR       &kp PERCENT   &kp CARET  &trans     &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp AMPERSAND    &kp ASTERISK  &trans     &trans     &trans     &trans
                         &trans  &trans  &trans    &trans           &trans        &trans
             >;
         };
