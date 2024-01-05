@@ -13,14 +13,22 @@
         terminal: terminal {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &kp LG(SPACE) &kp I &kp T &kp E &kp R &kp M &kp RETURN>;
+            bindings =
+                <&kp BACKSPACE &kp LG(SPACE)>,
+                <&macro_release>,
+                <&kp I &kp T &kp E &kp R &kp M &kp RETURN>;
+
             label = "TERMINAL";
         };
 
         vs_code: vs_code {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &kp LG(SPACE) &kp LS(V) &kp I &kp S &kp U &kp A &kp L &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp SPACE &kp LS(C) &kp O &kp D &kp E &kp RETURN>;
+            bindings =
+                <&kp BACKSPACE &kp LG(SPACE)>,
+                <&macro_wait_time 10>,
+                <&kp LS(V) &kp I &kp S &kp U &kp A &kp L &kp SPACE &kp LS(S) &kp T &kp U &kp D &kp I &kp O &kp SPACE &kp LS(C) &kp O &kp D &kp E &kp RETURN>;
+
             label = "VS_CODE";
         };
 
@@ -76,7 +84,11 @@
         chrome: chrome {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp BACKSPACE &spotlight &kp C &kp H &kp R &kp O &kp M &kp E &kp RETURN>;
+            bindings =
+                <&kp BACKSPACE &spotlight>,
+                <&macro_press>,
+                <&kp C &kp H &kp R &kp O &kp M &kp E &kp RETURN>;
+
             label = "CHROME";
         };
 
@@ -117,9 +129,9 @@
 
         System {
             bindings = <
-&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none  &none  &none    &none  &none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &sys_reset
+&bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &none  &none  &none    &none  &none  &none  &kp C_VOL_DN  &kp C_VOLUME_UP  &none
 &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &none  &none  &none    &none  &none  &none  &none         &none            &none
-&bt BT_PRV     &bt BT_CLR     &bt BT_NXT     &none  &none  &none    &none  &none  &none  &none         &none            &none
+&bt BT_PRV     &bt BT_CLR     &bt BT_NXT     &none  &none  &none    &none  &none  &none  &none         &none            &sys_reset
                                              &none  &none  &none    &none  &none  &none
             >;
         };
